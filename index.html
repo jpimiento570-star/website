@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>JIP Telecomunicaciones · Fibra óptica, internet rural, cámaras y energía solar en Piedecuesta</title>
+  <meta name="description" content="Internet por fibra óptica en Piedecuesta y radioenlace en la Mesa de los Santos, sin cláusula de permanencia. Cámaras de seguridad, energía solar e instalaciones eléctricas con soporte local.">
+  <meta name="theme-color" content="#0f1a2a">
+  <meta property="og:title" content="JIP Telecomunicaciones">
+  <meta property="og:description" content="Fibra óptica, internet rural, cámaras de seguridad y energía solar en Piedecuesta y la Mesa de los Santos.">
+  <meta property="og:image" content="og.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="hero.webp" type="image/webp">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "JIP Telecomunicaciones",
+    "description": "Internet por fibra óptica y radioenlace, cámaras de seguridad, energía solar e instalaciones eléctricas.",
+    "telephone": "+57 314 304 9755",
+    "areaServed": ["Piedecuesta", "Mesa de los Santos"],
+    "address": { "@type": "PostalAddress", "addressLocality": "Piedecuesta", "addressRegion": "Santander", "addressCountry": "CO" }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <!-- ══════════ ENCABEZADO ══════════ -->
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="JIP Telecomunicaciones, inicio">
+        <img src="logo.webp" alt="" width="44" height="44">
+        <span class="brand-text"><strong>JIP</strong><small>Telecomunicaciones</small></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Principal">
+        <a href="#internet">Internet</a>
+        <a href="#seguridad">Seguridad</a>
+        <a href="#solar">Energía solar</a>
+        <a href="#electricas">Eléctricas</a>
+        <a href="#cobertura">Cobertura</a>
+        <a href="#preguntas">Preguntas</a>
+        <a class="nav-cta-mobile btn btn-yolk" href="#contacto">Cotizar</a>
+      </nav>
+      <div class="header-actions">
+        <a class="header-phone" href="tel:+573143049755">314 304 9755</a>
+        <a class="btn btn-yolk btn-sm" href="#contacto">Cotizar</a>
+        <button class="menu-btn" id="menuBtn" aria-controls="nav" aria-expanded="false" aria-label="Abrir menú">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════ HERO ══════════ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <picture class="hero-media">
+      <source media="(max-width: 760px)" srcset="hero-mobile.webp" type="image/webp">
+      <source srcset="hero.webp" type="image/webp">
+      <img src="hero.jpg" alt="Antena de radioenlace de JIP frente al atardecer sobre las montañas de Santander" width="1414" height="821" fetchpriority="high">
+    </picture>
+    <canvas class="hero-signal" id="heroSignal" aria-hidden="true"></canvas>
+    <div class="hero-shade" aria-hidden="true"></div>
+
+    <div class="wrap hero-inner">
+      <p class="hero-kicker">Piedecuesta · Mesa de los Santos</p>
+      <h1 id="hero-title">Conectamos tu <span class="rotator" id="rotator">hogar</span><br>con lo que importa.</h1>
+      <p class="hero-sub">Fibra óptica en la ciudad, radioenlace en el campo. Sin cláusula de permanencia y con un equipo técnico que vive aquí mismo.</p>
+
+      <form class="coverage" id="coverageForm" autocomplete="off" role="search" aria-label="Verificar cobertura">
+        <label class="sr-only" for="coverageInput">Tu barrio, vereda o condominio</label>
+        <svg class="coverage-pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        <input id="coverageInput" list="zonas" placeholder="Escribe tu barrio o vereda" required>
+        <datalist id="zonas"></datalist>
+        <button class="btn btn-yolk" type="submit">Verificar cobertura</button>
+      </form>
+      <div class="coverage-result" id="coverageResult" role="status" aria-live="polite"></div>
+
+      <ul class="hero-proof">
+        <li>Sin permanencia</li>
+        <li>Soporte técnico local</li>
+        <li>Fibra + radio</li>
+      </ul>
+    </div>
+  </section>
+
+  <main id="contenido">
+
+    <!-- ══════════ SERVICIOS ══════════ -->
+    <section class="section services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="services-title">Todo lo que tu casa, finca o negocio necesita, con un solo aliado.</h2>
+          <p>Conectividad, seguridad y energía instaladas y soportadas por el mismo equipo técnico.</p>
+        </div>
+        <div class="service-grid">
+          <a class="service-tile tile-feature" href="#internet">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+            <h3>Fibra óptica</h3>
+            <p>Hasta 300 Mbps simétricos para streaming, teletrabajo y gaming sin cortes.</p>
+            <span class="tile-link">Ver planes</span>
+          </a>
+          <a class="service-tile" href="#rural">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20v-8"/><circle cx="12" cy="10" r="2"/><path d="M8.5 6.5a5 5 0 0 0 0 7M15.5 6.5a5 5 0 0 1 0 7M5.6 3.6a9 9 0 0 0 0 12.8M18.4 3.6a9 9 0 0 1 0 12.8"/></svg>
+            <h3>Internet rural</h3>
+            <p>Radioenlace de largo alcance para fincas y veredas donde la fibra no llega.</p>
+            <span class="tile-link">Cómo funciona</span>
+          </a>
+          <a class="service-tile" href="#seguridad">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h13l3 3v4l-3 3H3z"/><circle cx="10" cy="12" r="2.5"/><path d="M19 10l2-1v6l-2-1"/></svg>
+            <h3>Cámaras de seguridad</h3>
+            <p>Sistemas IP y HD con grabación y vista en vivo desde tu celular.</p>
+            <span class="tile-link">Ver soluciones</span>
+          </a>
+          <a class="service-tile" href="#solar">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+            <h3>Energía solar</h3>
+            <p>Paneles diseñados según tu consumo para bajar tu factura de energía.</p>
+            <span class="tile-link">Calcular ahorro</span>
+          </a>
+          <a class="service-tile" href="#electricas">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+            <h3>Instalaciones eléctricas</h3>
+            <p>Redes, tableros, iluminación y cableado estructurado residencial e industrial.</p>
+            <span class="tile-link">Conocer más</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ INTERNET / PLANES ══════════ -->
+    <section class="section plans-section" id="internet" aria-labelledby="plans-title">
+      <div class="wrap">
+        <div class="section-head section-head-split">
+          <div>
+            <p class="eyebrow">Internet por fibra óptica</p>
+            <h2 id="plans-title">Elige tu velocidad. Cámbiala cuando quieras.</h2>
+          </div>
+          <p>Todos los planes son sin cláusula de permanencia e incluyen instalación por nuestro equipo y soporte local.</p>
+        </div>
+
+        <div class="plans" id="plans" aria-roledescription="carrusel" aria-label="Planes de fibra óptica">
+          <!-- Las tarjetas se generan desde main.js (PLANES) para mantener un solo lugar de precios -->
+        </div>
+        <div class="carousel-nav" aria-label="Navegación de planes">
+          <button class="carousel-arrow" type="button" id="planPrev" aria-label="Plan anterior">←</button>
+          <div class="carousel-dots" id="planDots"></div>
+          <button class="carousel-arrow" type="button" id="planNext" aria-label="Plan siguiente">→</button>
+        </div>
+        <p class="carousel-hint" id="planHint" aria-live="polite">Desliza para ver más planes</p>
+
+        <div class="advisor" id="advisor">
+          <div class="advisor-copy">
+            <h3>¿No sabes cuánta velocidad necesitas?</h3>
+            <p>Cuéntanos cómo usan internet en tu casa o negocio y te sugerimos un plan.</p>
+          </div>
+          <form class="advisor-form" id="advisorForm">
+            <fieldset>
+              <legend>Personas conectadas</legend>
+              <div class="chips">
+                <label><input type="radio" name="people" value="1" checked><span>1 a 2</span></label>
+                <label><input type="radio" name="people" value="2"><span>3 a 4</span></label>
+                <label><input type="radio" name="people" value="3"><span>5 o más</span></label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Lo que más hacen</legend>
+              <div class="chips">
+                <label><input type="checkbox" name="use" value="streaming"><span>Series en 4K</span></label>
+                <label><input type="checkbox" name="use" value="work"><span>Teletrabajo y clases</span></label>
+                <label><input type="checkbox" name="use" value="gaming"><span>Videojuegos</span></label>
+                <label><input type="checkbox" name="use" value="cams"><span>Cámaras de seguridad</span></label>
+                <label><input type="checkbox" name="use" value="business"><span>Negocio</span></label>
+              </div>
+            </fieldset>
+          </form>
+          <div class="advisor-result" id="advisorResult" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ INTERNET RURAL ══════════ -->
+    <section class="section rural" id="rural" aria-labelledby="rural-title">
+      <div class="wrap rural-grid">
+        <div class="rural-copy">
+          <p class="eyebrow">Internet rural por radioenlace</p>
+          <h2 id="rural-title">La señal sube la montaña contigo.</h2>
+          <p>Donde la fibra aún no llega, instalamos radioenlaces de largo alcance con línea de vista. Es la solución para fincas, parcelaciones y veredas de la Mesa de los Santos que necesitan una conexión estable para trabajar, estudiar o vigilar su propiedad.</p>
+          <ul class="checks">
+            <li>Estudio de línea de vista antes de instalar</li>
+            <li>Antena y equipos configurados según tu terreno</li>
+            <li>Ideal para teletrabajo, clases y cámaras en la finca</li>
+          </ul>
+          <a class="btn btn-yolk" href="#contacto" data-service="internet-rural">Solicitar visita técnica</a>
+        </div>
+        <figure class="rural-figure">
+          <img src="rural.webp" alt="Antena de radioenlace instalada en una finca de la Mesa de los Santos" loading="lazy" width="720" height="900">
+          <figcaption>Radioenlace JIP, Mesa de los Santos</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ══════════ SEGURIDAD ══════════ -->
+    <section class="section dark security" id="seguridad" aria-labelledby="security-title">
+      <div class="wrap">
+        <div class="section-head section-head-split">
+          <div>
+            <p class="eyebrow">Cámaras de seguridad</p>
+            <h2 id="security-title">Tu casa, tu finca y tu negocio en la palma de la mano.</h2>
+          </div>
+          <p>Diseñamos la cobertura, instalamos las cámaras y dejamos todo configurado para que veas en vivo y revises grabaciones desde tu celular.</p>
+        </div>
+
+        <div class="security-grid">
+          <div class="live-view" aria-label="Ejemplo de vista en vivo de cuatro cámaras" role="img">
+            <div class="live-bar">
+              <span class="live-dot">En vivo</span>
+              <span class="live-clock" id="liveClock">--:--:--</span>
+            </div>
+            <div class="cams">
+              <div class="cam cam-1"><span class="cam-label">Portón</span><span class="motion" aria-hidden="true"></span></div>
+              <div class="cam cam-2"><span class="cam-label">Parqueadero</span></div>
+              <div class="cam cam-3"><span class="cam-label">Bodega</span></div>
+              <div class="cam cam-4"><span class="cam-label">Patio · visión nocturna</span></div>
+            </div>
+            <div class="live-alert"><strong>Movimiento detectado</strong> · Portón · hace un momento</div>
+          </div>
+
+          <ul class="feature-list">
+            <li>
+              <h3>Vista en vivo desde el celular</h3>
+              <p>Revisa todas tus cámaras en tiempo real desde cualquier lugar, en celular o computador.</p>
+            </li>
+            <li>
+              <h3>Grabación continua o por movimiento</h3>
+              <p>Grabadores NVR para cámaras IP y DVR para sistemas HD, con almacenamiento local seguro.</p>
+            </li>
+            <li>
+              <h3>Imagen clara incluso de noche</h3>
+              <p>Cámaras de alta definición que mantienen el detalle en condiciones de poca luz.</p>
+            </li>
+            <li>
+              <h3>Red bien configurada</h3>
+              <p>Dejamos la red optimizada para que el acceso remoto sea estable y seguro.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="security-cta">
+          <a class="btn btn-yolk" href="#contacto" data-service="cctv">Diseñar mi sistema de cámaras</a>
+          <span>Asesoría sin costo para definir cuántas cámaras necesitas y dónde.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ ENERGÍA SOLAR ══════════ -->
+    <section class="section solar" id="solar" aria-labelledby="solar-title">
+      <div class="wrap">
+        <div class="section-head section-head-split">
+          <div>
+            <p class="eyebrow">Energía solar</p>
+            <h2 id="solar-title">El sol de Santander, trabajando para tu factura.</h2>
+          </div>
+          <p>Calcula en segundos un sistema de paneles a la medida de tu consumo. Luego lo validamos con una visita técnica.</p>
+        </div>
+
+        <div class="calc">
+          <form class="calc-inputs" id="solarForm">
+            <label class="field">
+              <span>¿Cuánto pagas de energía al mes?</span>
+              <div class="money">
+                <span aria-hidden="true">$</span>
+                <input id="bill" inputmode="numeric" value="350.000" aria-describedby="billHint">
+              </div>
+              <input type="range" id="billRange" min="80000" max="3000000" step="10000" value="350000" aria-label="Factura mensual">
+              <small id="billHint">Pesos colombianos, según tu última factura.</small>
+            </label>
+            <label class="field">
+              <span>¿Qué parte de tu consumo quieres cubrir con sol?</span>
+              <div class="seg" role="radiogroup" aria-label="Cobertura solar">
+                <label><input type="radio" name="cover" value="0.5"><span>50%</span></label>
+                <label><input type="radio" name="cover" value="0.8" checked><span>80%</span></label>
+                <label><input type="radio" name="cover" value="1"><span>100%</span></label>
+              </div>
+            </label>
+            <details class="calc-advanced">
+              <summary>Ajustar supuestos</summary>
+              <label class="field-inline">Tarifa (COP por kWh)<input id="tariff" type="number" value="950" min="300" max="2500"></label>
+              <label class="field-inline">Horas de sol pico al día<input id="hsp" type="number" value="4.5" step="0.1" min="2" max="7"></label>
+            </details>
+          </form>
+
+          <div class="calc-output" aria-live="polite">
+            <div class="calc-main">
+              <span>Ahorro estimado al mes</span>
+              <strong id="outSaving">$0</strong>
+              <small id="outYear">$0 al año</small>
+            </div>
+            <dl class="calc-stats">
+              <div><dt>Sistema sugerido</dt><dd id="outKwp">0 kWp</dd></div>
+              <div><dt>Paneles de 550 W</dt><dd id="outPanels">0</dd></div>
+              <div><dt>Área aproximada</dt><dd id="outArea">0 m²</dd></div>
+              <div><dt>Energía solar al mes</dt><dd id="outKwh">0 kWh</dd></div>
+            </dl>
+            <a class="btn btn-yolk btn-block" href="#contacto" data-service="energia-solar" id="solarCta">Quiero mi estudio solar</a>
+            <p class="calc-note">Estimación referencial. El diseño final depende de tu techo, sombras y tipo de conexión.</p>
+          </div>
+        </div>
+
+        <ol class="steps">
+          <li><strong>Visita técnica</strong><span>Revisamos tu techo, sombras y consumo real.</span></li>
+          <li><strong>Diseño y propuesta</strong><span>Te entregamos el sistema, la inversión y el ahorro esperado.</span></li>
+          <li><strong>Instalación</strong><span>Montaje de paneles, inversor y protecciones eléctricas.</span></li>
+          <li><strong>Acompañamiento</strong><span>Te enseñamos a revisar tu producción y seguimos contigo.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ══════════ ELÉCTRICAS ══════════ -->
+    <section class="section electric" id="electricas" aria-labelledby="electric-title">
+      <div class="wrap electric-grid">
+        <div>
+          <p class="eyebrow">Instalaciones eléctricas</p>
+          <h2 id="electric-title">Instalaciones seguras, listas para la demanda de hoy.</h2>
+          <p>Viviendas, comercios e industria. Trabajamos con materiales certificados y bajo estándares de seguridad para que tu red eléctrica soporte equipos modernos sin sobresaltos.</p>
+          <a class="btn btn-outline" href="#contacto" data-service="instalaciones-electricas">Cotizar instalación</a>
+        </div>
+        <ul class="electric-list">
+          <li>Redes eléctricas residenciales e industriales</li>
+          <li>Tableros y protecciones</li>
+          <li>Cableado estructurado</li>
+          <li>Iluminación interior y exterior</li>
+          <li>Adecuaciones y ampliaciones</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══════════ COBERTURA ══════════ -->
+    <section class="section coverage-section" id="cobertura" aria-labelledby="coverage-title">
+      <div class="wrap coverage-grid">
+        <div class="video-frame">
+          <video id="coverageVideo" muted loop playsinline preload="none" poster="cobertura-poster.jpg" aria-label="Recorrido aéreo por las zonas con cobertura de JIP">
+            <source src="cobertura.mp4" type="video/mp4">
+          </video>
+          <button class="sound-btn" id="soundBtn" type="button" aria-pressed="false">Activar sonido</button>
+        </div>
+        <div>
+          <p class="eyebrow">Cobertura</p>
+          <h2 id="coverage-title">Dónde estamos hoy.</h2>
+          <p>Nuestra red crece cada mes. Si tu zona no aparece, déjanos tus datos y te avisamos cuando llegue.</p>
+          <ul class="zone-list" id="zoneList"></ul>
+          <a class="btn btn-outline" href="#top" id="checkAgain">Verificar mi dirección</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ TESTIMONIOS ══════════ -->
+    <section class="section testimonials" aria-labelledby="t-title">
+      <div class="wrap">
+        <h2 id="t-title" class="center">Lo que dicen quienes ya se conectaron.</h2>
+        <div class="quotes">
+          <figure>
+            <blockquote>Vivimos en la vereda La Unión, Mesa de los Santos. Antes no teníamos señal confiable. Desde que contratamos JIP trabajamos remoto sin interrupciones.</blockquote>
+            <figcaption><strong>María Fernanda R.</strong><span>Mesa de los Santos · Radioenlace</span></figcaption>
+          </figure>
+          <figure>
+            <blockquote>Excelente servicio al cliente y la fibra óptica es rapidísima. En mi negocio de Piedecuesta no se cae nunca la conexión. Cien por ciento recomendado.</blockquote>
+            <figcaption><strong>Carlos López</strong><span>Piedecuesta · Fibra óptica</span></figcaption>
+          </figure>
+          <figure>
+            <blockquote>Por fin una empresa que entiende el campo. La instalación por radio fue rápida y ahora mi hijo puede tomar sus clases sin problemas.</blockquote>
+            <figcaption><strong>Gloria Martínez</strong><span>Zona rural · Radioenlace</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ POR QUÉ JIP ══════════ -->
+    <section class="section why" aria-labelledby="why-title">
+      <div class="wrap why-grid">
+        <h2 id="why-title">Por qué las familias y empresas de la región eligen JIP.</h2>
+        <dl class="why-list">
+          <div><dt>Somos de aquí</dt><dd>Nuestro equipo vive en Piedecuesta. Cuando llamas, te atiende alguien que conoce tu zona.</dd></div>
+          <div><dt>Sin permanencia</dt><dd>Te quedas porque el servicio funciona, no por un contrato.</dd></div>
+          <div><dt>Ciudad y campo</dt><dd>Fibra óptica donde hay red y radioenlace donde no, con el mismo soporte.</dd></div>
+          <div><dt>Un solo aliado</dt><dd>Internet, cámaras, energía solar y electricidad instalados por el mismo equipo.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ══════════ CONTACTO / FORMULARIO LEADFLOW ══════════ -->
+    <section class="section dark contact" id="contacto" aria-labelledby="contact-title">
+      <div class="wrap contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow">Contacto</p>
+          <h2 id="contact-title">Cuéntanos qué necesitas.</h2>
+          <p>Te enviamos la cotización y el portafolio del servicio a tu correo y un asesor te escribe por WhatsApp.</p>
+          <ul class="contact-points">
+            <li><span>WhatsApp ventas y soporte</span><a href="https://wa.me/573143049755" target="_blank" rel="noopener">314 304 9755</a></li>
+            <li><span>Ubicación</span>Piedecuesta, Santander</li>
+          </ul>
+        </div>
+
+        <form class="lead-form" id="leadForm" novalidate>
+          <fieldset class="type-switch">
+            <legend class="sr-only">¿Qué necesitas?</legend>
+            <label><input type="radio" name="kind" value="cotizacion" checked><span>Cotizar un servicio</span></label>
+            <label><input type="radio" name="kind" value="soporte"><span>Soporte o mantenimiento</span></label>
+            <label><input type="radio" name="kind" value="pqr"><span>Queja o reclamo</span></label>
+          </fieldset>
+
+          <div class="form-grid">
+            <label class="f f-full">
+              <span>Nombre completo</span>
+              <input name="name" autocomplete="name" required>
+            </label>
+            <label class="f">
+              <span>WhatsApp</span>
+              <input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="300 123 4567" required>
+            </label>
+            <label class="f">
+              <span>Correo electrónico</span>
+              <input name="email" type="email" autocomplete="email" required>
+            </label>
+
+            <label class="f f-full">
+              <span>Servicio</span>
+              <select name="service" id="serviceSelect" required>
+                <option value="fibra-optica">Internet por fibra óptica</option>
+                <option value="internet-rural">Internet rural (radioenlace)</option>
+                <option value="cctv">Cámaras de seguridad</option>
+                <option value="energia-solar">Energía solar</option>
+                <option value="instalaciones-electricas">Instalaciones eléctricas</option>
+              </select>
+            </label>
+
+            <label class="f f-full" data-show="plan">
+              <span>Plan de interés</span>
+              <select name="plan" id="planSelect"></select>
+            </label>
+
+            <fieldset class="f f-full" data-show="support" hidden>
+              <legend>Tipo de servicio técnico</legend>
+              <div class="chips">
+                <label><input type="radio" name="support_type" value="mantenimiento_correctivo" checked><span>Tengo una falla</span></label>
+                <label><input type="radio" name="support_type" value="mantenimiento_preventivo"><span>Mantenimiento preventivo</span></label>
+              </div>
+            </fieldset>
+
+            <label class="f">
+              <span>Barrio o vereda</span>
+              <input name="barrio" id="barrioInput" list="zonas">
+            </label>
+            <label class="f">
+              <span>Dirección</span>
+              <input name="direccion" autocomplete="street-address">
+            </label>
+
+            <label class="f f-full">
+              <span id="messageLabel">Cuéntanos más (opcional)</span>
+              <textarea name="message" rows="3"></textarea>
+            </label>
+
+            <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <label class="consent f-full">
+              <input type="checkbox" name="opt_in" required>
+              <span>Autorizo a JIP Telecomunicaciones a tratar mis datos según la <a href="privacidad.html" target="_blank">política de tratamiento de datos</a> y a contactarme por WhatsApp y correo.</span>
+            </label>
+          </div>
+
+          <button class="btn btn-yolk btn-block btn-lg" type="submit" id="leadSubmit">Enviar solicitud</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="lead-done" id="leadDone" hidden tabindex="-1">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22"/><path d="m14 25 7 7 14-15"/></svg>
+          <h3 id="doneTitle">¡Recibimos tu solicitud!</h3>
+          <p id="doneText">Revisa tu correo: te enviamos la información. Un asesor te escribirá por WhatsApp.</p>
+          <button class="btn btn-outline" type="button" id="leadAgain">Enviar otra solicitud</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ PREGUNTAS ══════════ -->
+    <section class="section faq" id="preguntas" aria-labelledby="faq-title">
+      <div class="wrap faq-grid">
+        <h2 id="faq-title">Preguntas frecuentes</h2>
+        <div class="faq-list">
+          <details>
+            <summary>¿Tengo que firmar cláusula de permanencia?</summary>
+            <p>No. Todos nuestros planes de internet son sin permanencia. Puedes cambiar de plan o cancelar cuando lo necesites.</p>
+          </details>
+          <details>
+            <summary>¿Qué pasa si la fibra no llega a mi casa?</summary>
+            <p>Si estás en zona rural o la fibra aún no pasa por tu calle, evaluamos un radioenlace. Hacemos un estudio de línea de vista para confirmar que la conexión será estable antes de instalar.</p>
+          </details>
+          <details>
+            <summary>¿Qué diferencia hay entre fibra y radioenlace?</summary>
+            <p>La fibra llega por cable de vidrio hasta tu casa y ofrece la mayor velocidad y estabilidad. El radioenlace usa antenas con línea de vista y es la mejor alternativa para fincas y veredas.</p>
+          </details>
+          <details>
+            <summary>¿Puedo ver mis cámaras desde el celular?</summary>
+            <p>Sí. Dejamos el sistema configurado para que veas en vivo y revises grabaciones desde tu celular o computador, estés donde estés.</p>
+          </details>
+          <details>
+            <summary>¿Los paneles solares sirven si ya tengo conexión a la red eléctrica?</summary>
+            <p>Sí. En la visita técnica revisamos tu consumo y tu techo y te proponemos el sistema adecuado, conectado a la red o con respaldo, según lo que necesites.</p>
+          </details>
+          <details>
+            <summary>¿Cómo reporto una falla?</summary>
+            <p>Elige “Soporte o mantenimiento” en el formulario o escríbenos por WhatsApp al 314 304 9755. Recibirás un número de radicado para hacer seguimiento.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ══════════ PIE ══════════ -->
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top">
+          <img src="logo.webp" alt="" width="40" height="40">
+          <span class="brand-text"><strong>JIP</strong><small>Telecomunicaciones</small></span>
+        </a>
+        <p>Conectando Piedecuesta y la Mesa de los Santos con el futuro.</p>
+      </div>
+      <div>
+        <h3>Servicios</h3>
+        <a href="#internet">Fibra óptica</a>
+        <a href="#rural">Internet rural</a>
+        <a href="#seguridad">Cámaras de seguridad</a>
+        <a href="#solar">Energía solar</a>
+        <a href="#electricas">Instalaciones eléctricas</a>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <a href="https://wa.me/573143049755" target="_blank" rel="noopener">WhatsApp 314 304 9755</a>
+        <a href="tel:+573143049755">Llamar</a>
+        <span>Piedecuesta, Santander</span>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <a href="privacidad.html">Tratamiento de datos</a>
+        <div class="socials" id="socials"></div>
+      </div>
+    </div>
+    <div class="wrap footer-base">
+      <span>© <span id="year">2026</span> JIP Telecomunicaciones</span>
+      <span>Piedecuesta · Mesa de los Santos · Santander</span>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/573143049755?text=Hola%2C%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.2a.4.4 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3Z"/></svg>
+  </a>
+
+  <script src="config.js"></script>
+  <script src="main.js" defer></script>
+</body>
+</html>
