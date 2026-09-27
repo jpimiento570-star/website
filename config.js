@@ -5,8 +5,8 @@
 window.JIP_CONFIG = {
   // ── LeadFlow (panel → Ajustes → Formulario del sitio)
   // Mientras sigan los valores de ejemplo, el formulario abre WhatsApp con los datos como respaldo.
-  leadflowEndpoint: 'https://TU-PROYECTO.supabase.co/functions/v1/lead-ingest',
-  formKey: 'TU_FORM_KEY',
+  leadflowEndpoint: 'https://euyhvnrmdhomjniyzedn.supabase.co/functions/v1/sheets-sync',
+  formKey: '8ecdabfae5794bf93e69ebb1a7822002',
 
   // ── WhatsApp de ventas y soporte (con indicativo, sin +)
   whatsapp: '573143049755',
